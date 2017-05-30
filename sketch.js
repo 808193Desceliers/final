@@ -203,7 +203,7 @@ function setup()
   permanentLock1 = false;
 
   //default canvas
-  canvas = 1;
+  canvas = 17;
 
 }
 
@@ -331,6 +331,10 @@ function draw()
   inventory2();
   paintCanvasButtons();
   fill(0,0,0);
+
+  fill(0,0,0);
+  text("Mouse X "+mouseX,10,30);
+  text("Mouse Y "+mouseY,10,50);
 }
 
 
@@ -1452,6 +1456,7 @@ function canvas22()
     //fill(255,0,0);
     image(clawmain,clawmainX,clawmainY,70,60);
   }
+
   if (clawpartinventoryposition == 0 || showinventory == true)
   {
     fill(0,255,0);
@@ -1509,6 +1514,14 @@ function canvas26()
   paintCanvasButtons();
   inventory3();
   cursor(ARROW)
+  if (mouseX > 331 && mouseX < 394 && mouseY > 203 && mouseY < 257)
+  {
+    cursor(HAND)
+  }
+  else 
+  {
+    cursor(ARROW)
+  }
   if (clawwholeinventoryposition == 0 || showinventory == true)
   {
     //fill(255,0,0);
@@ -2115,6 +2128,10 @@ function paintCanvasButtons()
         lock = true; 
       }
     }
+    else if (mouseX > 253 && mouseX <314 && mouseY > 480 && mouseY < 510)
+    {
+      cursor(HAND)
+    }
     else  
     {
        cursor(ARROW);
@@ -2227,6 +2244,10 @@ function paintCanvasButtons()
         canvas = 23; 
         lock = true; 
       }
+    }
+    else if (mouseX > 420 && mouseX < 470 && mouseY > 230 && mouseY < 290)
+    {
+      cursor(HAND)
     }
     else  
     {
